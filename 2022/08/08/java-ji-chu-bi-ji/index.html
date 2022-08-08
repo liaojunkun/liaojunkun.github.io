@@ -1,0 +1,2151 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="java基础笔记, Kailの博客">
+    <meta name="description" content="一、java基础入门1、JDK与JRE的区别
+JDK = JRE + 开发工具集（例如javac编译工具等）
+JRE = JVM + javaSE标准类库
+2、梦开始的地方// 这是一个java的快速入门
+// 对代码的相关说明﻿
+// 1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>java基础笔记 | Kailの博客</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+    <style>
+        body{
+            background-image: url(https://cdn.jsdelivr.net/gh/Tokisaki-Galaxy/res/site/medias/background.jpg);
+            background-repeat:no-repeat;
+            background-size: 100% 100%;
+            background-attachment:fixed;
+        }
+    </style>
+
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/reward.css">
+    
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.2.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Kailの博客" type="application/atom+xml">
+</head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Kailの博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-list" style="zoom: 0.6;"></i>
+      
+      <span>Medias</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/musics">
+          
+          <i class="fas fa-music" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Musics</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/movies">
+          
+          <i class="fas fa-film" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Movies</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/books">
+          
+          <i class="fas fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Books</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/galleries">
+          
+          <i class="fas fa-image" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Galleries</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Kailの博客</div>
+        <div class="logo-desc">
+            
+            我的第一个博客
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-list"></i>
+			
+			Medias
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/musics " style="margin-left:50px">
+				  
+				   <i class="fa fas fa-music" style="position: absolute;left:28px" ></i>
+			      
+		          <span>Musics</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/movies " style="margin-left:50px">
+				  
+				   <i class="fa fas fa-film" style="position: absolute;left:28px" ></i>
+			      
+		          <span>Movies</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/books " style="margin-left:50px">
+				  
+				   <i class="fa fas fa-book" style="position: absolute;left:28px" ></i>
+			      
+		          <span>Books</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/galleries " style="margin-left:50px">
+				  
+				   <i class="fa fas fa-image" style="position: absolute;left:28px" ></i>
+			      
+		          <span>Galleries</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://s1.328888.xyz/2022/08/08/0UGPs.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">java基础笔记</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/java/">
+                                <span class="chip bg-color">java</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-08-08
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2022-08-08
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    16.9k
+                </div>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="一、java基础入门"><a href="#一、java基础入门" class="headerlink" title="一、java基础入门"></a>一、java基础入门</h1><h1 id="1、JDK与JRE的区别"><a href="#1、JDK与JRE的区别" class="headerlink" title="1、JDK与JRE的区别"></a>1、JDK与JRE的区别</h1><p><img src="https://s1.328888.xyz/2022/08/08/0sSYP.png"></p>
+<p>JDK = JRE + 开发工具集（例如javac编译工具等）</p>
+<p>JRE = JVM + javaSE标准类库</p>
+<h2 id="2、梦开始的地方"><a href="#2、梦开始的地方" class="headerlink" title="2、梦开始的地方"></a>2、梦开始的地方</h2><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 这是一个java的快速入门</span>
+<span class="token comment">// 对代码的相关说明﻿</span>
+<span class="token comment">// 1、 public class Hello 表示Hello是一个类，是一个public的公有的类</span>
+<span class="token comment">// 2、Hello{} 表示一个类的开始和结束</span>
+<span class="token comment">// 3、public static void main(String[] args) 表示一个主方法，即我们程序的入口</span>
+<span class="token comment">// 4、main() {} 表示方法的开始和结束</span>
+<span class="token comment">// 5、System.out.println("Hello,work~");表示输出"Hello,work~"到屏幕</span>
+<span class="token comment">// 6、; 表示语句结束﻿﻿</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Hello</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">prinln</span><span class="token punctuation">(</span><span class="token string">"Hello,Word~"</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>运行原理示意图：</strong></p>
+<p><img src="https://s1.328888.xyz/2022/08/08/0PIqF.jpg"></p>
+<p>一、什么是编译</p>
+<p>javac Hallo.java</p>
+<p>1、有了java源文件，通过编译器将其编译成JVM可以识别的字节码文件。</p>
+<p>2、在该源文件目录下，通过javac编译工具对Hallo.java文件进行编译。</p>
+<p>3、如果程序没有错误，没有任何提示，且在当前目录下会出现一个Hello.class文件，该文件称为字节码文件</p>
+<p>二、什么是运行</p>
+<p>1、有了可执行的java程序（Hello.class字节码文件）</p>
+<p>2、通过运行工具java.exe对字节码文件进行执行</p>
+<p>3、对修改后的的Hallo.java源文件需要从新编译，生成新的class 文件后，再执行才能生效</p>
+<h1 id="重写与重载"><a href="#重写与重载" class="headerlink" title="重写与重载"></a><strong>重写与重载</strong></h1><p>重写：表现为多态性</p>
+<p>方法的声明：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">权限修饰符 返回值类型 方法名<span class="token punctuation">(</span>形参列表<span class="token punctuation">)</span> <span class="token keyword">throws</span> 异常的类型<span class="token punctuation">{</span>
+ <span class="token comment">//方法体</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>子类重写的方法的方法名和形参列表与父类被重写的方法的方法名和形参列表相同</li>
+<li>子类重写的方法的权限修饰符不小于父类被重写的方法的权限修饰符</li>
+<li>特殊情况：子类不能重写父类中声明为private权限的方法</li>
+<li>返回值类型：</li>
+<li>父类被重写的方法的返回值类型是void，则子类重写的方法的返回值类型只能是void</li>
+<li>父类被重写的方法的返回值类型是A类型，则子类重写的方法的返回值类型可以是A类或A类的子类</li>
+<li>父类被重写的方法的返回值类型是基本数据类型(比如：double)，则子类重写的方法的返回值类型必须是相同的基本数据类型(必须也是double)</li>
+<li>子类重写的方法抛出的异常类型不大于父类被重写的方法抛出的异常类型</li>
+<li>约定俗称：子类中的叫重写的方法，父类中的叫被重写的方法</li>
+<li>子类和父类中的同名同参数的方法要么都声明为非static的（考虑重写，要么都声明为static的（不是重写)。</li>
+</ul>
+<p><strong>存在与父子之间，</strong></p>
+<p><strong>重写方法overwrite 方法名相同、参数列表、返回值相同。</strong></p>
+<p><strong>子类方法不能降低父类方法的权限、子类方法不能抛出比父类方法更多的异常(但子类方法可以不抛出异常)。</strong></p>
+<p><strong>方法被定义为 final 不能被重写。</strong></p>
+<p><strong>重载：不表现为多态性。</strong></p>
+<ul>
+<li>存在与父子及同类中</li>
+<li>重载方法方法名相同，参数列表及个数不同</li>
+</ul>
+<p><strong>重载，是指允许存在多个同名方法，而这些方法的参数不同。编译器根据方法不同的参数表，对同名方法的名称做修饰。对于编译器而言，这些同名方法就成了不同的方法。它们的调用地址在编译期就绑定了。Java的重载是可以包括父类和子类的，即子类可以重载父类的同名不同参数的方法。</strong></p>
+<p><strong>所以：对于重载而言，在方法调用之前，编译器就已经确定了所要调用的方法，这称为“早绑定”或“静态绑定”；</strong></p>
+<p><strong>而对于多态，只等到方法调用的那一刻，解释运行器才会确定所要调用的具体方法，这称为“晚绑定”或“动态绑定”。</strong></p>
+<p><strong>引用一句Bruce Eckel的话：“不要犯傻，如果它不是晚绑定，它就不是多态。”</strong></p>
+<h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2><h3 id="属性："><a href="#属性：" class="headerlink" title="属性："></a>属性：</h3><p><strong>对比：属性 vs 局部变量</strong></p>
+<p><strong>1.相同点：</strong></p>
+<ul>
+<li>定义变量的格式：数据类型 变量名 = 变量值</li>
+<li>先声明，后使用</li>
+<li>变量都其对应的作用域</li>
+</ul>
+<p><strong>2.不同点：</strong></p>
+<ul>
+<li>在类中声明的位置的不同</li>
+<li>属性：直接定义在类的一对{}内</li>
+<li>局部变量：声明在方法内、方法形参、代码块内、构造器形参、构造器内部的变量</li>
+<li>关于权限修饰符的不同</li>
+<li>属性：可以在声明属性时，指明其权限，使用权限修饰符。</li>
+<li>常用的权限修饰符：private、public、缺省、protected —&gt;封装性</li>
+<li>目前，大家声明属性时，都使用缺省就可以了。</li>
+<li>局部变量：不可以使用权限修饰符。</li>
+<li>默认初始化值的情况：</li>
+<li>属性：类的属性，根据其类型，都默认初始化值。</li>
+<li>整型（byte、short、int、long：0）</li>
+<li>浮点型（float、double：0.0）</li>
+<li>字符型（char：0 （或’\u0000’））</li>
+<li>布尔型（boolean：false）</li>
+<li>引用数据类型（类、数组、接口：null）</li>
+<li>局部变量：没默认初始化值。</li>
+<li>意味着，我们在调用局部变量之前，一定要显式赋值。</li>
+<li>特别地：形参在调用时，我们赋值即可。</li>
+<li>在内存中加载的位置：</li>
+<li>属性：加载到堆空间中 （非static）</li>
+<li>局部变量：加载到栈空间</li>
+</ul>
+<p><strong>属性赋值顺序</strong></p>
+<ul>
+<li>总结：属性赋值的先后顺序</li>
+<li>① 默认初始化</li>
+<li>② 显式初始化</li>
+<li>③ 构造器中初始化</li>
+<li>④ 通过”对象.方法” 或 “对象.属性”的方式，赋值</li>
+<li>以上操作的先后顺序：① - ② - ③ - ④</li>
+</ul>
+<h1 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h1><h1 id="方法的声明："><a href="#方法的声明：" class="headerlink" title="方法的声明："></a>方法的声明：</h1><pre class="line-numbers language-java" data-language="java"><code class="language-java">权限修饰符 返回值类型 方法名<span class="token punctuation">(</span>形参列表<span class="token punctuation">)</span><span class="token punctuation">{</span>
+方法体
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="构造器"><a href="#构造器" class="headerlink" title="构造器"></a>构造器</h3><p><strong>构造器的作用：</strong></p>
+<p><strong>1.创建对象</strong></p>
+<p><strong>2.初始化对象的信息</strong></p>
+<p>使用说明：</p>
+<ul>
+<li>如果没显式的定义类的构造器的话，则系统默认提供一个空参的构造器</li>
+<li>定义构造器的格式：权限修饰符 类名(形参列表){}</li>
+<li>一个类中定义的多个构造器，彼此构成重载</li>
+<li>一旦我们显式的定义了类的构造器之后，系统就不再提供默认的空参构造器</li>
+<li>一个类中，至少会有一个构造器。</li>
+</ul>
+<h3 id="this"><a href="#this" class="headerlink" title="this"></a><strong>this</strong></h3><p>可以调用的结构：属性、方法；构造器</p>
+<p><strong>this调用属性、方法：</strong></p>
+<p>理解为：当前对象 或 当前正在创建的对象</p>
+<p>在类的方法中，我们可以使用”this.属性”或”this.方法”的方式，调用当前对象属性或方法。但是，</p>
+<ul>
+<li>通常情况下，我们都择省略”this.”。特殊情况下，如果方法的形参和类的属性同名时，我们必须显式</li>
+<li>的使用”this.变量”的方式，表明此变量是属性，而非形参。</li>
+<li>在类的构造器中，我们可以使用”this.属性”或”this.方法”的方式，调用当前正在创建的对象属性或方法。但是，通常情况下，我们都择省略”this.”。特殊情况下，如果构造器的形参和类的属性同名时，我们必须显式的使用”this.变量”的方式，表明此变量是属性，而非形参。</li>
+</ul>
+<p><strong>this调用构造器：</strong></p>
+<ul>
+<li>我们在类的构造器中，可以显式的使用”this(形参列表)”方式，调用本类中指定的其他构造器</li>
+<li>构造器中不能通过”this(形参列表)”方式调用自己</li>
+<li>如果一个类中有n个构造器，则最多有 n - 1构造器中使用了”this(形参列表)”</li>
+<li>规定：”this(形参列表)”必须声明在当前构造器的首行</li>
+<li>构造器内部，最多只能声明一个”this(形参列表)”，用来调用其他的构造器</li>
+</ul>
+<h1 id="super"><a href="#super" class="headerlink" title="super"></a><strong>super</strong></h1><p>可以调用的结构：</p>
+<p><strong>属性、方法、构造器</strong></p>
+<p><strong>super调用属性、方法：</strong></p>
+<ul>
+<li>我们可以在子类的方法或构造器中。通过使用”super.属性”或”super.方法”的方式，显式的调用父类中声明的属性或方法。但是，通常情况下，我们习惯省略”super.”</li>
+<li>特殊情况：当子类和父类中定义了同名的属性时，我们要想在子类中调用父类中声明的属性，则必须显式的使用”super.属性”的方式，表明调用的是父类中声明的属性。</li>
+<li>特殊情况：当子类重写了父类中的方法以后，我们想在子类的方法中调用父类中被重写的方法时，则必须显式的使用”super.方法”的方式，表明调用的是父类中被重写的方法。</li>
+</ul>
+<p><strong>super调用构造器：</strong></p>
+<ul>
+<li>我们可以在子类的构造器中显式的使用”super(形参列表)”的方式，调用父类中声明的指定的构造器</li>
+<li>“super(形参列表)”的使用，必须声明在子类构造器的首行！</li>
+<li>我们在类的构造器中，针对于”this(形参列表)”或”super(形参列表)”只能二一，不能同时出现</li>
+<li>在构造器的首行，没显式的声明”this(形参列表)”或”super(形参列表)”，则默认调用的是父类中空参的构造器：super()</li>
+<li>在类的多个构造器中，至少一个类的构造器中使用了”super(形参列表)”，调用父类中的构造器</li>
+</ul>
+<h1 id="封装性："><a href="#封装性：" class="headerlink" title="封装性："></a><strong>封装性：</strong></h1><p>我们程序设计追求“高内聚，低耦合”。</p>
+<p>高内聚 ：类的内部数据操作细节自己完成，不允许外部干涉；</p>
+<p>低耦合 ：仅对外暴露少量的方法用于使用。</p>
+<p>隐藏对象内部的复杂性，只对外公开简单的接口。便于外界调用，从而提高系统的可扩展性、可维护性。通俗的说，把该隐藏的隐藏起来，该暴露的暴露出来。这就是封装性的设计思想。</p>
+<p>体现一：将类的属性xxx私化(private),同时，提供公共的(public)方法来获取(getXxx)和设置(setXxx)此属性的值</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">private</span> <span class="token keyword">double</span> radius<span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setRadius</span><span class="token punctuation">(</span><span class="token keyword">double</span> radius<span class="token punctuation">)</span><span class="token punctuation">{</span>
+ <span class="token keyword">this</span><span class="token punctuation">.</span>radius <span class="token operator">=</span> radius<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">public</span> <span class="token keyword">double</span> <span class="token function">getRadius</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+ <span class="token keyword">return</span> radius<span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h1 id="继承性"><a href="#继承性" class="headerlink" title="继承性"></a><strong>继承性</strong></h1><p><strong>为什么要有类的继承性？(继承性的好处）</strong></p>
+<ul>
+<li>减少了代码的冗余，提高了代码的复用性</li>
+<li>便于功能的扩展</li>
+<li>为之后多态性的使用，提供了前提</li>
+</ul>
+<p><strong>继承性的格式</strong>：</p>
+<p>class A extends B{}</p>
+<ul>
+<li>A:子类、派生类、subclass</li>
+<li>B:父类、超类、基类、superclass</li>
+</ul>
+<p><strong>子类继承父类以后有哪些不同？</strong></p>
+<ul>
+<li>体现：一旦子类A继承父类B以后，子类A中就获取了父类B中声明的所有的属性和方法。</li>
+<li>特别的，父类中声明为private的属性或方法，子类继承父类以后，仍然认为获取了父类中私的结构。只因为封装性的影响，使得子类不能直接调用父类的结构而已。</li>
+<li>子类继承父类以后，还可以声明自己特有的属性或方法：实现功能的拓展。</li>
+<li>子类和父类的关系，不同于子集和集合的关系。</li>
+<li>extends：延展、扩展</li>
+</ul>
+<p><strong>Java中继承性的说明</strong></p>
+<ul>
+<li>一个类可以被多个子类继承。</li>
+<li>Java中类的单继承性：一个类只能有一个父类</li>
+<li>子父类是相对的概念。</li>
+<li>子类直接继承的父类，称为：直接父类。间接继承的父类称为：间接父类</li>
+<li>子类继承父类以后，就获取了直接父类以及所间接父类中声明的属性和方法</li>
+</ul>
+<h1 id="多态性"><a href="#多态性" class="headerlink" title="多态性"></a>多态性</h1><p>理解：可以理解为一个事物的多种形态。</p>
+<p>何为多态性：</p>
+<p>父类的引用指向子类的对象（或子类的对象赋给父类的引用）</p>
+<p>Person p = new Man();</p>
+<p>Object obj = new Date();</p>
+<p><strong>多态性的使用：虚拟方法调用</strong></p>
+<ul>
+<li>有了对象的多态性以后，我们在编译期，只能调用父类中声明的方法，但在运行期，我们实际执行的是子类重写父类的方法。</li>
+<li>总结：编译，看左边；运行，看右边。</li>
+</ul>
+<p><strong>关于向上转型与向下转型：</strong></p>
+<p>为什么使用向下转型：</p>
+<p>有了对象的多态性以后，内存中实际上是加载了子类特有的属性和方法的，但是由于变量声明为父类类型，导致编译时，只能调用父类中声明的属性和方法。子类特有的属性和方法不能调用。如何才能调用子类特的属性和方法？使用向下转型。</p>
+<p>使用强制类型转换符：()</p>
+<p><strong>注意：</strong></p>
+<ul>
+<li>使用强转时，可能出现ClassCastException的异常。</li>
+<li>为了避免在向下转型时出现ClassCastException的异常，我们在向下转型之前，先进行instanceof的判断，一旦返回true，就进行向下转型。如果返回false，不进行向下转型。</li>
+</ul>
+<h1 id="static"><a href="#static" class="headerlink" title="static"></a><strong>static</strong></h1><p>static:静态的</p>
+<p><strong>可以用来修饰的结构：主要用来修饰类的内部结构</strong></p>
+<p>属性、方法、代码块、内部类</p>
+<p><strong>static修饰属性：静态变量（或类变量）</strong></p>
+<p><strong>属性，是否使用static修饰，又分为：静态属性 vs 非静态属性(实例变量)</strong></p>
+<ul>
+<li>实例变量：我们创建了类的多个对象，每个对象都独立的拥一套类中的非静态属性。当修改其中一个对象中的非静态属性时，不会导致其他对象中同样的属性值的修改。</li>
+<li>静态变量：我们创建了类的多个对象，多个对象共享同一个静态变量。当通过某一个对象修改静态变量时，会导致其他对象调用此静态变量时，是修改过了的。</li>
+</ul>
+<p><strong>static修饰属性的其他说明</strong>：</p>
+<ul>
+<li>静态变量随着类的加载而加载。可以通过”类.静态变量”的方式进行调用</li>
+<li>静态变量的加载要早于对象的创建。</li>
+<li>由于类只会加载一次，则静态变量在内存中也只会存在一份：存在方法区的静态域中。</li>
+<li>类变量 实例变量</li>
+</ul>
+<p>类 yes no</p>
+<p>对象yes yes</p>
+<ul>
+<li>静态属性举例：System.out; Math.PI;</li>
+</ul>
+<p><strong>static修饰方法：静态方法、类方法</strong></p>
+<ul>
+<li>随着类的加载而加载，可以通过”类.静态方法”的方式进行调用</li>
+<li>静态方法 非静态方法</li>
+</ul>
+<p>类 yes no</p>
+<p>对象 yes yes</p>
+<ul>
+<li>静态方法中，只能调用静态的方法或属性</li>
+<li>非静态方法中，既可以调用非静态的方法或属性，也可以调用静态的方法或属性</li>
+</ul>
+<h1 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h1><ul>
+<li><strong>代码块的作用：用来初始化类、对象的信息</strong></li>
+<li><strong>分类：代码块要是使用修饰符，只能使用static</strong></li>
+<li><strong>静态代码块：</strong></li>
+<li>内部可以输出语句</li>
+<li>随着类的加载而执行,而且只执行一次</li>
+<li>作用：初始化类的信息</li>
+<li>如果一个类中定义了多个静态代码块，则按照声明的先后顺序执行</li>
+<li>静态代码块的执行要优先于非静态代码块的执行</li>
+<li>静态代码块内只能调用静态的属性、静态的方法，不能调用非静态的结构</li>
+<li><strong>非静态代码块：</strong></li>
+<li>内部可以输出语句</li>
+<li>随着对象的创建而执行</li>
+<li>每创建一个对象，就执行一次非静态代码块</li>
+<li>作用：可以在创建对象时，对对象的属性等进行初始化</li>
+<li>如果一个类中定义了多个非静态代码块，则按照声明的先后顺序执行</li>
+<li>非静态代码块内可以调用静态的属性、静态的方法，或非静态的属性、非静态的方法</li>
+</ul>
+<h1 id="final"><a href="#final" class="headerlink" title="final"></a><strong>final</strong></h1><p>final：最终的</p>
+<p><strong>可以用来修饰：类、方法、变量</strong></p>
+<p><strong>.final 用来修饰一个类:此类不能被其他类所继承。</strong></p>
+<ul>
+<li>比如：String类、System类、StringBuffer类</li>
+<li><strong>final 用来修饰方法：表明此方法不可以被重写</strong></li>
+<li>比如：Object类中getClass();</li>
+<li><strong>final 用来修饰变量：此时的”变量”就称为是一个常量</strong></li>
+<li>final修饰属性：可以考虑赋值的位置：显式初始化、代码块中初始化、构造器中初始化</li>
+<li>final修饰局部变量：</li>
+<li>尤其是使用final修饰形参时，表明此形参是一个常量。当我们调用此方法时，给常量形参赋一个实参。一旦赋值以后，就只能在方法体内使用此形参，但不能进行重新赋值。</li>
+<li><strong>static final 用来修饰属性：全局常量</strong></li>
+</ul>
+<h1 id="abstract"><a href="#abstract" class="headerlink" title="abstract"></a><strong>abstract</strong></h1><p>抽象的</p>
+<p>1.可以用来修饰：类、方法</p>
+<p>2.具体的：</p>
+<p>abstract修饰类：抽象类</p>
+<ul>
+<li>此类不能实例化</li>
+<li>抽象类中一定有构造器，便于子类实例化时调用（涉及：子类对象实例化的全过程）</li>
+<li>开发中，都会提供抽象类的子类，让子类对象实例化，完成相关的操作 —&gt;抽象的使用前提：继承性</li>
+</ul>
+<p><strong>abstract修饰方法：抽象方法</strong></p>
+<ul>
+<li>抽象方法只方法的声明，没方法体</li>
+<li>包含抽象方法的类，一定是一个抽象类。反之，抽象类中可以没有抽象方法的。</li>
+<li>若子类重写了父类中的所的抽象方法后，此子类方可实例化</li>
+<li>若子类没重写父类中的所的抽象方法，则此子类也是一个抽象类，需要使用abstract修饰</li>
+</ul>
+<p><strong>注意点：</strong></p>
+<ul>
+<li>abstract不能用来修饰：属性、构造器等结构</li>
+<li>abstract不能用来修饰私方法、静态方法、final的方法、final的类</li>
+</ul>
+<h1 id="interface"><a href="#interface" class="headerlink" title="interface"></a>interface</h1><p><strong>使用说明：</strong></p>
+<p>接口使用interface来定义</p>
+<ul>
+<li>Java中，接口和类是并列的两个结构</li>
+</ul>
+<p>如何定义接口：定义接口中的成员</p>
+<ul>
+<li>JDK7及以前：只能定义全局常量和抽象方法</li>
+<li>全局常量：public static final的.但是书写时，可以省略不写</li>
+<li>抽象方法：public abstract的</li>
+<li>JDK8：除了定义全局常量和抽象方法之外，还可以定义静态方法、默认方法（略</li>
+<li>接口中不能定义构造器的！意味着接口不可以实例化</li>
+<li>Java开发中，接口通过让类去实现(implements)的方式来使用.</li>
+<li>如果实现类覆盖了接口中的所抽象方法，则此实现类就可以实例化4.</li>
+<li>如果实现类没覆盖接口中所的抽象方法，则此实现类仍为一个抽象类</li>
+<li>Java类可以实现多个接口 —&gt;弥补了Java单继承性的局限性</li>
+<li>格式：class AA extends BB implements CC,DD,EE</li>
+<li>接口与接口之间可以继承，而且可以多继承</li>
+<li>接口的具体使用，体现多态性</li>
+<li>接口，实际上可以看做是一种规范</li>
+<li>Java8中关于接口的新规范</li>
+</ul>
+<p>//知识点1：接口中定义的静态方法，只能通过接口来调用。</p>
+<p>//知识点2：通过实现类的对象，可以调用接口中的默认方法。</p>
+<p>//如果实现类重写了接口中的默认方法，调用时，仍然调用的是重写以后的方法</p>
+<p>//知识点3：如果子类(或实现类)继承的父类和实现的接口中声明了同名同参数的默认方法，那么子类在没重写此方法的情况下，默认调用的是父类中的同名同参数的方法。–&gt;类优先原则</p>
+<p>//知识点4：如果实现类实现了多个接口，而这多个接口中定义了同名同参数的默认方法，</p>
+<p>//那么在实现类没重写此方法的情况下，报错。–&gt;接口冲突。</p>
+<p>//这就需要我们必须在实现类中重写此方法</p>
+<h1 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h1><p>内部类：类的第五个成员</p>
+<p><strong>定义：Java中允许将一个类A声明在另一个类B中，则类A就是内部类，类B称为外部类.</strong></p>
+<ul>
+<li><strong>内部类的分类：</strong></li>
+</ul>
+<p>成员内部类（静态、非静态 ） vs 局部内部类(方法内、代码块内、构造器内)</p>
+<ul>
+<li><strong>成员内部类的理解：</strong></li>
+</ul>
+<p>一方面，作为外部类的成员：</p>
+<ul>
+<li>调用外部类的结构</li>
+<li>可以被static修饰</li>
+<li>可以被4种不同的权限修饰</li>
+</ul>
+<p>另一方面，作为一个类：</p>
+<ul>
+<li>类内可以定义属性、方法、构造器等</li>
+<li>可以被final修饰，表示此类不能被继承。言外之意，不使用final，就可以被继承</li>
+<li>可以被abstract修饰</li>
+</ul>
+<p>.成员内部类：</p>
+<ul>
+<li>如何创建成员内部类的对象？(静态的，非静态的)</li>
+</ul>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> name<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> age<span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">,</span> <span class="token class-name">String</span> age<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span>  <span class="token keyword">class</span> <span class="token class-name">Dog</span><span class="token punctuation">{</span>
+        <span class="token keyword">private</span> <span class="token class-name">String</span> name<span class="token punctuation">;</span>
+        <span class="token keyword">public</span> <span class="token class-name">Dog</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">public</span> <span class="token class-name">Dog</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token annotation punctuation">@Overridepublic</span> <span class="token class-name">String</span> <span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token string">"Dog{"</span> <span class="token operator">+</span>
+                    <span class="token string">"name='"</span> <span class="token operator">+</span> name <span class="token operator">+</span> <span class="token char">'\''</span> <span class="token operator">+</span>
+                    <span class="token char">'}'</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">class</span> <span class="token class-name">DogOne</span><span class="token punctuation">{</span>
+        <span class="token keyword">private</span> <span class="token class-name">String</span> name<span class="token punctuation">;</span>
+        <span class="token keyword">public</span> <span class="token class-name">DogOne</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">public</span> <span class="token class-name">DogOne</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token annotation punctuation">@Overridepublic</span> <span class="token class-name">String</span> <span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token string">"DogOne{"</span> <span class="token operator">+</span>
+                    <span class="token string">"name='"</span> <span class="token operator">+</span> name <span class="token operator">+</span> <span class="token char">'\''</span> <span class="token operator">+</span>
+                    <span class="token char">'}'</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//创建静态的Dog内部类的实例(静态的成员内部类):</span>
+<span class="token class-name">Person<span class="token punctuation">.</span>Dog</span> dog <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person<span class="token punctuation">.</span>Dog</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//创建非静态的Bird内部类的实例(非静态的成员内部类):</span>
+<span class="token comment">//Person.Bird bird = new Person.Bird();//错误的</span>
+<span class="token class-name">Person</span> p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">Person<span class="token punctuation">.</span>Bird</span> bird <span class="token operator">=</span> p<span class="token punctuation">.</span><span class="token keyword">new</span> <span class="token class-name">Bird</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//返回一个实现了Comparable接口的类的对象</span>
+
+<span class="token keyword">public</span> <span class="token class-name">Comparable</span> <span class="token function">getComparable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span> 
+<span class="token comment">//创建一个实现了Comparable接口的类:局部内部类</span>
+<span class="token comment">//方式一：</span>
+​ <span class="token comment">//方式二：return new Comparable(){</span>
+​
+ <span class="token annotation punctuation">@Overridepublic</span> <span class="token keyword">int</span> <span class="token function">compareTo</span><span class="token punctuation">(</span><span class="token class-name">Object</span> o<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span> 
+ <span class="token punctuation">}</span>  
+ <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>&nbsp;&nbsp;<strong>注意点：</strong></p>
+<ul>
+<li>在局部内部类的方法中（比如：show如果调用局部内部类所声明的方法(比如：method)中的局部变量(比如：num)的话,要求此局部变量声明为final的。</li>
+<li>jdk 7及之前版本：要求此局部变量显式的声明为final的</li>
+<li>jdk 8及之后的版本：可以省略final的声明</li>
+<li>总结：</li>
+<li>成员内部类和局部内部类，在编译以后，都会生成字节码文件。</li>
+<li>格式：成员内部类：外部类$内部类名.class</li>
+<li>局部内部类：外部类$数字 内部类名.class</li>
+</ul>
+<h1 id="String、StringBuffer、StringBuilder的区别"><a href="#String、StringBuffer、StringBuilder的区别" class="headerlink" title="String、StringBuffer、StringBuilder的区别"></a><strong>String、StringBuffer、StringBuilder的区别</strong></h1><ul>
+<li>String ，<strong>是只读字符串</strong>，也就意味着 String 引用的字符串内容是不能被改变的。<strong>每次对 String 类型进 行改变的时候，都会生成一个新的 String 对象，然后将指针指向新的 String 对象。</strong></li>
+<li>StringBuilder ：它和 StringBuffer 的方法完全相同，区别在于它是在单线程环境下使用的，因为它的所有方面都<strong>没有 被 synchronized 修饰，因此它的效率也比 StringBuffer 要高。</strong>（线程不安全）</li>
+</ul>
+<h1 id="String-s-x3D-new-String-“xyz”-会创建几个对象"><a href="#String-s-x3D-new-String-“xyz”-会创建几个对象" class="headerlink" title="String s = new String(“xyz”)会创建几个对象"></a><strong>String s = new String(“xyz”)会创建几个对象</strong></h1><p>String a = “abc”；</p>
+<p>String b = new String(“abc”);</p>
+<p>这两种声明方法得到的String是不一样的，第一种声明方法得到的String是存储在String常量池里面的，而第二种方式的声明很明显是正常的创建一个对象的使用方法，所以存储在堆中。</p>
+<p>当String类直接赋值时，如果常量池内存在这个字符串，则s1直接指向常量池的地址，若没有，则先在常量池内创建这个字符串对象，s1直接指向常量池这个字符串的内存地址； 当String类使用new实例对象时，首先在堆里创建这个对象，若是常量池内没这个字符串，则也创建一个，然后堆里的对象的value指向常量池内的字符串。</p>
+<p>所以答案是一个或者两个,如果常量池中原来有”abc”,则创建一个对象;如果常量池中原来没有”abc”,那么会创建两个对象</p>
+<h1 id="抽象类和接口有什么区别"><a href="#抽象类和接口有什么区别" class="headerlink" title="抽象类和接口有什么区别"></a><strong>抽象类和接口有什么区别</strong></h1><p>抽象类是对类的的抽象，是一种模板设计，抽象类中可以有抽象方法和非抽像方法。抽象类可以在不提供接口方法实现的情况下实现接口。</p>
+<p>接口是行为的规范，接口中的所有方法都是抽象的。类可以实现很多个接口，但是只能继承一个抽象类。类可以不实现抽象类和接口声明的所有方法，当然， 在这种情况下，类也必须得声明成是抽象的。</p>
+<h1 id="类的实例化顺序"><a href="#类的实例化顺序" class="headerlink" title="类的实例化顺序"></a><strong>类的实例化顺序</strong></h1><ol>
+<li>父类的静态变量</li>
+<li>父类的静态代码块</li>
+<li>子类的静态变量</li>
+<li>子类的静态代码块</li>
+<li>父类非静态变量（父类实例成员变量）</li>
+<li>父类的构造函数</li>
+<li>子类的非静态变量</li>
+<li>子类的构造函数</li>
+</ol>
+<h1 id="Collection集合"><a href="#Collection集合" class="headerlink" title="Collection集合"></a><strong>Collection集合</strong></h1><h1 id="Arrlist"><a href="#Arrlist" class="headerlink" title="Arrlist"></a><strong>Arrlist</strong></h1><p><strong>排列有序，可重复、底层数组、查询速度快，增删慢、线程不安全、当容量不够时Arrlist是扩容1.5+1</strong></p>
+<p>总之，ArrayList默认容量是10，如果初始化时一开始指定了容量，或者通过集合作为元素，则容量为指定的大小或参数集合的大小。每次扩容为原来的1.5倍，如果新增后超过这个容量，则容量为新增后所需的最小容量。如果增加0.5倍后的新容量超过限制的容量，则用所需的最小容量与限制的容量进行判断，超过则指定为Integer的最大值，否则指定为限制容量大小。然后通过数组的复制将原数据复制到一个更大(新的容量大小)的数组。</p>
+<p>size和modCount的区别</p>
+<p>可能看了源码有时候还分不清size和modCount的区别，那么这里就用例子来说明。</p>
+<p>size是ArrayList的变量。modCount是ArrayList的父类AbstractList中的变量，默认值为0。</p>
+<p>size记录了ArrayList中元素的数量，modCount记录的是关于元素的数目被修改的次数。modCount在ArrayList的普通操作里可能并没有看出多大用处，但是在涉及到fail-fast就主要是依靠它了。</p>
+<h1 id="Vector"><a href="#Vector" class="headerlink" title="Vector"></a>Vector</h1><p>排列有序，可重复、底层数组、查询速度快，增删慢、线程安全 性能较低 当容量不够时Vector是扩容一倍</p>
+<h1 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h1><p>排列有序，可重复、底层使用双向循环链表数据结构、查询速度慢，增删快、线程不安全 性能较低</p>
+<h1 id="HashSet"><a href="#HashSet" class="headerlink" title="HashSet"></a><strong>HashSet</strong></h1><p>排列无序，不可重复，底层使用Hash表 存取速度快，内部是HashMAP</p>
+<p>无参数的构造函数，此构造函数创建一个大小为16的容器，加载因子为0.75</p>
+<h1 id="TreeSet"><a href="#TreeSet" class="headerlink" title="TreeSet"></a><strong>TreeSet</strong></h1><p>排列无序，不可重复，底层使用二叉数 排序存储，内部是TreeMap的SortedSet</p>
+<h1 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a><strong>HashMap</strong></h1><p>键（key）不可重复，值（Value）可以重复，底层Hash表，线程不安全，允许Key为Null,Value也为Null</p>
+<h4 id="put操作的时候才真正构建table数组"><a href="#put操作的时候才真正构建table数组" class="headerlink" title="put操作的时候才真正构建table数组"></a>put操作的时候才真正构建table数组</h4><p>inflateTable这个方法用于为主干数组table在内存中分配存储空间，通过roundUpToPowerOf2(toSize)可以确保capacity为大于或等于toSize的最接近toSize的二次幂，</p>
+<h4 id="addEntry的实现："><a href="#addEntry的实现：" class="headerlink" title="addEntry的实现："></a>addEntry的实现：</h4><p>resize(2 * table.length);<em>//当size超过临界阈值threshold，并且即将发生哈希冲突时进行扩容</em></p>
+<p>当发生哈希冲突并且size大于阈值的时候，需要进行数组扩容，扩容时，需要新建一个长度为之前数组2倍的新的数组，然后将当前的Entry数组中的元素全部传输过去，扩容后的新数组长度为之前的2倍，所以扩容相对来说是个耗资源的操作。</p>
+<h4 id="为何HashMap的数组长度一定是2的次幂？"><a href="#为何HashMap的数组长度一定是2的次幂？" class="headerlink" title="为何HashMap的数组长度一定是2的次幂？"></a>为何HashMap的数组长度一定是2的次幂？</h4><p>如果数组进行扩容，数组长度发生变化，而存储位置 index = h&amp;(length-1),index也可能会发生变化，需要重新计算。indexHashMap的数组长度一定保持2的次幂，比如16的二进制表示为 10000，那么length-1就是15，二进制为01111，同理扩容后的数组长度为32，二进制表示为100000，length-1为31，二进制表示为011111。从下图可以我们也能看到这样会保证低位全为1，而扩容后只有一位差异，也就是多出了最左位的1，这样在通过 h&amp;(length-1)的时候，只要h对应的最左边的那一个差异位为0，就能保证得到的新的数组索引和老数组索引一致(大大减少了之前已经散列良好的老数组的数据位置重新调换)</p>
+<p>如果不是2的次幂，也就是低位不是全为1此时，要使得index=21，h的低位部分不再具有唯一性了，哈希冲突的几率会变的更大，同时，index对应的这个bit位无论如何不会等于1了，而对应的那些数组位置也就被白白浪费了。</p>
+<p>JDK1.8在JDK1.7的基础上针对增加了红黑树来进行优化。即当链表超过8时，链表就转换为红黑树，利用红黑树快速增删改查的特点提高HashMap的性能，其中会用到红黑树的插入、删除、查找等算法。</p>
+<h1 id="ConcurrentHashMap"><a href="#ConcurrentHashMap" class="headerlink" title="ConcurrentHashMap"></a><strong>ConcurrentHashMap</strong></h1><p>在jdk1.8中主要是采用了CAS算法实现线程安全的。在以前的ConcurrentHashMap中是锁定了Segment，而在jdk1.8被移除，现在锁定的是一个Node头节点</p>
+<p>在ConcurrentHashMap中不是直接存储TreeNode来实现的，而是用TreeBin来包装TreeNode来实现的。也就是说在实际的ConcurrentHashMap桶中，存放的是TreeBin对象，而不是TreeNode对象。之所以TreeNode继承自Node是为了附带next指针，而这个next指针可以在TreeBin中寻找下一个TreeNode，这里也是与HashMap之间比较大的区别。</p>
+<p>扩容时：</p>
+<p>数组中（桶中）总共分为3种存储情况：空，链表头，TreeBin头</p>
+<ul>
+<li>①遍历原来的数组（原table），如果数组中某个值为空，则直接放置一个forwordingNode。</li>
+<li>②如果数组中某个值不为空，而是一个链表头结点，那么就对这个链表进行拆分为两个链表，存储到nextTable对应的两个位置。</li>
+<li>③如果数组中某个值不为空，而是一个TreeBin头结点，那么这个地方就存储的是红黑树的结构，这样一来，处理就会变得相对比较复杂，就需要先判断需不需要把树转换为链表，做完一系列的处理，然后把对应的结果存储在nextTable的对应两个位置。</li>
+</ul>
+<p><strong>put:</strong></p>
+<p>再这之前，先简单说一下PUT的具体操作：</p>
+<ul>
+<li>①先传入一个k和v的键值对，不可为空（HashMap是可以为空的），如果为空就直接报错。</li>
+<li>②接着去判断table是否为空，如果为空就进入初始化阶段。</li>
+<li>③如果判断数组中某个指定的桶是空的，那就直接把键值对插入到这个桶中作为头节点，而且这个操作不用加锁。</li>
+<li>④如果这个要插入的桶中的hash值为-1，也就是MOVED状态（也就是这个节点是forwordingNode），那就是说明有线程正在进行扩容操作，那么当前线程就进入协助扩容阶段。</li>
+<li>⑤需要把数据插入到链表或者树中，如果这个节点是一个链表节点，那么就遍历这个链表，如果发现有相同的key值就更新value值，如果遍历完了都没有发现相同的key值，就需要在链表的尾部插入该数据。插入结束之后判断该链表节点个数是否大于8，如果大于就需要把链表转化为红黑树存储。</li>
+<li>⑥如果这个节点是一个红黑树节点，那就需要按照树的插入规则进行插入。</li>
+<li>⑦put结束之后，需要给map已存储的数量+1，在addCount方法中判断是否需要扩容</li>
+</ul>
+<h1 id="Java内存模型"><a href="#Java内存模型" class="headerlink" title="Java内存模型"></a><strong>Java内存模型</strong></h1><ul>
+<li>a、lock（锁定）：在某一个线程在读取主内存的时候需要把变量锁定。</li>
+<li>b、unlock（解锁）：某一个线程读取玩变量值之后会释放锁定，别的线程就可以进入操作</li>
+<li>c、read（读取）：从主内存中读取变量的值并放入工作内存中</li>
+<li>d、load（加载）：从read操作得到的值放入工作内存变量副本中</li>
+<li>e、use（使用）：把工作内存中的一个变量值传递给执行引擎</li>
+<li>f、assign（赋值）：它把一个从执行引擎接收到的值赋值给工作内存的变量</li>
+<li>g、store（存储）：把工作内存中的一个变量的值传送到主内存中</li>
+<li>h、write（写入）：把store操作从工作内存中一个变量的值传送到主内存的变量中。</li>
+</ul>
+<h4 id="volatile-（可见性）内存屏障"><a href="#volatile-（可见性）内存屏障" class="headerlink" title="volatile:（可见性）内存屏障"></a>volatile:（可见性）内存屏障</h4><p>如果对声明了volatile的变量进行写操作，JVM就会向处理器发送一条Lock前缀的指令，将这个变量所在缓存行的数据写回到系统内存。</p>
+<p>在多处理器下，为了保证各个处理器的缓存是一致的，就会实现<strong>缓存一致性</strong>协议，<strong>每个处理器通过嗅探在总线上传播的数据来检查自己缓存的值是不是过期</strong>了，当处理器发现自己缓存行对应的内存地址被修改，就会将当前处理器的缓存行设置成无效状态，当处理器对这个数据进行修改操作的时候，会重新从系统内存中把数据读到处理器缓存里。</p>
+<ul>
+<li>Lock前缀的指令会引起处理器缓存写回内存；</li>
+<li>一个处理器的缓存回写到内存会导致其他处理器的缓存失效；</li>
+<li>当处理器发现本地缓存失效后，就会从内存中重读该变量数据，即可以获取当前最新值。</li>
+</ul>
+<p>这样针对volatile变量通过这样的机制就使得每个线程都能获得该变量的最新值。</p>
+<h5 id="volatile的内存语义实现"><a href="#volatile的内存语义实现" class="headerlink" title="volatile的内存语义实现"></a>volatile的内存语义实现</h5><p>为此，JMM采取了保守策略：</p>
+<ol>
+<li>在每个volatile写操作的<strong>前面</strong>插入一个StoreStore屏障；</li>
+<li>在每个volatile写操作的<strong>后面</strong>插入一个StoreLoad屏障；</li>
+<li>在每个volatile读操作的<strong>后面</strong>插入一个LoadLoad屏障；</li>
+<li>在每个volatile读操作的<strong>后面</strong>插入一个LoadStore屏障。</li>
+</ol>
+<p>需要注意的是：volatile写是在前面和后面<strong>分别插入内存屏障</strong>，而volatile读操作是在<strong>后面插入两个内存屏障</strong></p>
+<h1 id="CAS"><a href="#CAS" class="headerlink" title="CAS"></a><strong>CAS</strong></h1><p>CAS是指compare and swap，意识是指一个旧的预期值A,主内存的值是B，要修改的值C，当且仅当A==B的时候，A的值才会被修改成C，而且这个操作是<strong>原子性</strong>的，是一个非阻塞性的 <strong>乐观锁</strong></p>
+<p><strong>ABA问题</strong>：当CPU1从缓存里面读到了数值A，另一个CPU2这时候也从缓存里面读到了A，然后将他主内存里面的值先修改成B，再将他修改成A，释放缓存锁，此时CPU1获取到缓存锁，去读主内存里面的值，发现还是A，判断相等修改新值，这在CPU1的线程里面看起来是没有任何改变，但实际上主内存里面这块地址的值已经有了一个A-&gt;B-&gt;A的改变，自从jdk1.5之后，加入了AtomicStampedReference类来防止这个问题，通过将引用和版本号作为一个tuple来防止ABA问题，那么修改结果就会变成1A-&gt;1B-&gt;2A，就能看到内存里面这个值的改变。</p>
+<h1 id="栈"><a href="#栈" class="headerlink" title="栈"></a><strong>栈</strong></h1><p>栈是限制插入和删除只能在同一个位置上进行的表，该位置是该表的末端，叫做栈顶，对栈的操作只有push(进栈)和pop （出栈）栈是后进先出的访问、插入和删除只能在栈顶进行</p>
+<h1 id="类加载生命周期"><a href="#类加载生命周期" class="headerlink" title="类加载生命周期"></a><strong>类加载生命周期</strong></h1><p>加载、链接（验证、准备、解析）、初始化</p>
+<h1 id="类加载"><a href="#类加载" class="headerlink" title="类加载"></a><strong>类加载</strong></h1><p><strong>（加载）</strong></p>
+<p>加载指的是将类的class文件读入到内存，并为之创建一个java.lang.Class对象，也就是说，当程序中使用任何类时，系统都会为之建立一个java.lang.Class对象。</p>
+<p>类的加载由类加载器完成，类加载器通常由JVM提供，这些类加载器也是前面所有程序运行的基础，JVM提供的这些类加载器通常被称为系统类加载器。除此之外，开发者可以通过继承ClassLoader基类来创建自己的类加载器。</p>
+<p><strong>(链接)</strong></p>
+<p><strong>验证：</strong></p>
+<p>验证的目的在于确保Class文件的字节流中包含信息符合当前虚拟机要求，不会危害虚拟机自身安全。其主要包括四种验证，文件格式验证，元数据验证，字节码验证，符号引用验证。</p>
+<ul>
+<li><strong>文件格式验证：</strong>主要验证字节流是否符合Class文件格式规范，并且能被当前的虚拟机加载处理。例如：主，次版本号是否在当前虚拟机处理的范围之内。常量池中是否有不被支持的常量类型。指向常量的中的索引值是否存在不存在的常量或不符合类型的常量。</li>
+<li><strong>元数据验证：</strong>对字节码描述的信息进行语义的分析，分析是否符合java的语言语法的规范。</li>
+<li><strong>字节码验证：</strong>最重要的验证环节，分析数据流和控制，确定语义是合法的，符合逻辑的。主要的针对元数据验证后对方法体的验证。保证类方法在运行时不会有危害出现。</li>
+<li><strong>符号引用验证：</strong>主要是针对符号引用转换为直接引用的时候，是会延伸到第三解析阶段，主要去确定访问类型等涉及到引用的情况，主要是要保证引用一定会被访问到，不会出现类等无法访问的问题。</li>
+</ul>
+<p><strong>准备：</strong></p>
+<p>类准备阶段负责为类的静态变量分配内存，并设置默认初始值。</p>
+<p><strong>解析：</strong></p>
+<p>将类的二进制数据中的符号引用替换成直接引用。说明一下：符号引用：符号引用是以一组符号来描述所引用的目标，符号可以是任何的字面形式的字面量，只要不会出现冲突能够定位到就行。布局和内存无关。直接引用：是指向目标的指针，偏移量或者能够直接定位的句柄。该引用是和内存中的布局有关的，并且一定加载进来的。</p>
+<p><strong>初始化：</strong></p>
+<p>是为类的静态变量赋予正确的初始值，准备阶段和初始化阶段看似有点矛盾，其实是不矛盾的，如果类中有语句：private static int a = 10，它的执行过程是这样的，首先字节码文件被加载到内存后，先进行链接的验证这一步骤，验证通过后准备阶段，给a分配内存，因为变量a是static的，所以此时a等于int类型的默认初始值0，即a=0,然后到解析（后面在说），到初始化这一步骤时，才把a的真正的值10赋给a,此时a=10。</p>
+<h1 id="类加载时机："><a href="#类加载时机：" class="headerlink" title="类加载时机："></a><strong>类加载时机：</strong></h1><ul>
+<li>1.创建类的实例 ，new 生成对象</li>
+<li>2.访问类的静态变量，或静态变量的赋值</li>
+<li>3.调用类的静态方法</li>
+<li>4.使用反射获取类的信息，强制创建类的实例对象，newInstance</li>
+<li>5.初始化某个类的子类时，会初始化父类</li>
+<li>6.直接使用java.exe运行某个类的主类,main方法，会初始化</li>
+<li>说明：如果访问某个类的final变量，则不进行初始化</li>
+</ul>
+<h1 id="类加载器："><a href="#类加载器：" class="headerlink" title="类加载器："></a><strong>类加载器：</strong></h1><p>在Java中，一个类用其全限定类名（包括包名和类名）作为标识；但在JVM中，一个类用其全限定类名和其类加载器作为其唯一标识。</p>
+<p><strong>根类加载器</strong></p>
+<p>（bootstrap class loader）:它用来加载 Java 的核心类，是用原生代码来实现的，并不继承自 java.lang.ClassLoader（负责加载$JAVA_HOME中jre/lib/rt.jar里所有的class，由C++实现，不是ClassLoader子类）。由于引导类加载器涉及到虚拟机本地实现细节，开发者无法直接获取到启动类加载器的引用，所以不允许直接通过引用进行操作。</p>
+<p><strong>扩展类加载器</strong></p>
+<p>（extensions class loader）：它负责加载JRE的扩展目录，lib/ext或者由java.ext.dirs系统属性指定的目录中的JAR包的类。由Java语言实现，父类加载器为null。</p>
+<p><strong>系统类加载器（system class loader）：</strong></p>
+<p>被称为系统（也称为应用）类加载器，它负责在JVM启动时加载来自Java命令的-classpath选项、java.class.path系统属性，或者CLASSPATH换将变量所指定的JAR包和类路径。程序可以通过ClassLoader的静态方法getSystemClassLoader()来获取系统类加载器。如果没有特别指定，则用户自定义的类加载器都以此类加载器作为父加载器。由Java语言实现，父类加载器为ExtClassLoader。</p>
+<p><strong>类加载器加载Class大致要经过如下8个步骤：</strong></p>
+<ul>
+<li>1.检测此Class是否载入过，即在缓冲区中是否有此Class，如果有直接进入第8步，否则进入第2步。</li>
+<li>2.如果没有父类加载器，则要么Parent是根类加载器，要么本身就是根类加载器，则跳到第4步，如果父类加载器存在，则进入第3步。</li>
+<li>3..请求使用父类加载器去载入目标类，如果载入成功则跳至第8步，否则接着执行第5步。</li>
+<li>4.请求使用根类加载器去载入目标类，如果载入成功则跳至第8步，否则跳至第7步。</li>
+<li>5.当前类加载器尝试寻找Class文件，如果找到则执行第6步，如果找不到则执行第7步。</li>
+<li>6.从文件中载入Class，成功后跳至第8步。</li>
+<li>7.抛出ClassNotFountException异常。</li>
+<li>8.返回对应的java.lang.Class对象。</li>
+</ul>
+<h1 id="类加载机制："><a href="#类加载机制：" class="headerlink" title="类加载机制："></a>类加载机制：</h1><p><strong>全盘负责：</strong></p>
+<p>所谓全盘负责，就是当一个类加载器负责加载某个Class时，该Class所依赖和引用其他Class也将由该类加载器负责载入，除非显示使用另外一个类加载器来载入。</p>
+<p><strong>双亲委派：</strong></p>
+<p>所谓的双亲委派，则是先让父类加载器试图加载该Class，只有在父类加载器无法加载该类时才尝试从自己的类路径中加载该类。通俗的讲，就是某个特定的类加载器在接到加载类的请求时，首先将加载任务委托给父加载器，依次递归，如果父加载器可以完成类加载任务，就成功返回；只有父加载器无法完成此加载任务时，才自己去加载。</p>
+<p><strong>缓存机制</strong></p>
+<p>缓存机制将会保证所有加载过的Class都会被缓存，当程序中需要使用某个Class时，类加载器先从缓存区中搜寻该Class，只有当缓存区中不存在该Class对象时，系统才会读取该类对应的二进制数据，并将其转换成Class对象，存入缓冲区中。这就是为很么修改了Class后，必须重新启动JVM，程序所做的修改才会生效的原因。</p>
+<p><strong>双亲委派机制</strong></p>
+<p>其工作原理的是，如果一个类加载器收到了类加载请求，它并不会自己先去加载，而是把这个请求委托给父类的加载器去执行，如果父类加载器还存在其父类加载器，则进一步向上委托，依次递归，请求最终将到达顶层的启动类加载器，如果父类加载器可以完成类加载任务，就成功返回，倘若父类加载器无法完成此加载任务，子加载器才会尝试自己去加载，这就是双亲委派模式，即每个儿子都很懒，每次有活就丢给父亲去干，直到父亲说这件事我也干不了时，儿子自己才想办法去完成。</p>
+<p>*<em>双亲委派机制的优势：采用双亲委派模式的是好处是Java类随着它的类加载器一起具备了一种带有优先级的层次关系，通过这种层级关可以避免类的重复加载，当父亲已经加载了该类时，就没有必要子ClassLoader再加载一次。其次是考虑到安全因素，java核心api中定义类型不会被随意替换，假设通过网络传递一个名为java.lang.<strong><strong>Integer</strong></strong>的类，通过双亲委托模式传递到启动类加载器，而启动类加载器在核心Java API发现这个名字的类，发现该类已被加载，并不会重新加载网络传递的过来的java.lang.<strong><strong>Integer</strong></strong>，而直接返回已加载过的</em><em><strong>Integer</strong></em><em>.<strong><strong>class</strong></strong>，这样便可以防止核心API库被随意篡改。</em>*</p>
+<h1 id="内存区域："><a href="#内存区域：" class="headerlink" title="内存区域："></a>内存区域：</h1><h3 id="程序计数器"><a href="#程序计数器" class="headerlink" title="程序计数器"></a><strong>程序计数器</strong></h3><p>一块较小的内存空间, 是当前线程所执行的字节码的行号指示器，字节码解释器工作时就是通过改变这个计数器的值来选取下一条需要执行的字节码指令</p>
+<p><strong>该区域是属于线程私有的,因为在多线程环境中CPU通过在不同的线程来高速切换，此时程序计数器需要记录当前线程执行到哪一步了，以便下一次CPU可以在这个记录点上继续执行。</strong></p>
+<p>此内存区域是唯一一个在Java 虚拟机规范中没有规定任何 OutOfMemoryError 情况的区域。</p>
+<h3 id="Java-虚拟机栈（线程私有）"><a href="#Java-虚拟机栈（线程私有）" class="headerlink" title="Java 虚拟机栈（线程私有）"></a>Java 虚拟机栈（线程私有）</h3><p>线程私有的，它的生命周期与线程相同。虚拟机栈描述的是 Java 方法执行的内存模型：每个方法被执行的时候都会同时创建一个栈帧（ Stack Frame）用于存储局部变量表、操作栈、动态链接、方法出口等信息。每一个方法被调用直至执行完成的过程，就对应着一个栈帧在虚拟机栈中从入栈到出栈的过程。</p>
+<p>局部变量表存放了编译期可知的8种基本数据类型.对象引用</p>
+<p>局部变量表所需的内存空间在编译期间完成分配，当进入一个方法时，这个方法需要在帧中分配多大的局部变量空间是完全确定的，在方法运行期间不会改变局部变量表的大小。</p>
+<p>栈帧随着方法调用而创建，随着方法结束而销毁——无论方法是正常完成还是异常完成（抛出了在方法内未被捕获的异</p>
+<p>常）都算作方法结束</p>
+<p><strong>如果线程请求的栈深度大于虚拟机所允许的深度，将抛出 StackOverflowError 异常</strong></p>
+<p><strong>如果虚拟机栈扩展时无法申请到足够的内存时会抛出 OutOfMemoryError 异常。</strong></p>
+<h3 id="本地方法栈（线程私有）"><a href="#本地方法栈（线程私有）" class="headerlink" title="本地方法栈（线程私有）"></a>本地方法栈（线程私有）</h3><p>与虚拟机栈所发挥的作用是非常相似的，其区别不过是虚拟机栈为虚拟机执行 Java 方法（也就是字节码）服务，而本地方法栈则是为虚拟机使用到的 Native方法服务。<strong>有的虚拟机（譬如 Sun HotSpot 虚拟机）直接就把本地方法栈和虚拟机栈合二为一。</strong></p>
+<h3 id="Java堆"><a href="#Java堆" class="headerlink" title="Java堆"></a>Java堆</h3><p>Java堆是 Java 虚拟机所管理的内存中最大的一块。 Java堆是被所有线程共享的一块内存区域，在虚拟机启动时创建。此内存区域的唯一目的就是存放对象实例，几乎所有的对象实例都在这里分配内存。Java 堆是垃圾收集器管理的主要区域，因此很多时候也被称做“GC 堆（ ” Garbage Collected Heap）。如果从内存回收的角度看，Java堆又会划分为好几个区域(新时代，老年代，等等)如果从内存分配的角度看，线程共享的 Java 堆中可能划分出多个线程私有的分配缓冲区。但无论怎么去划分，无论那个区域，java堆中存储的依然是对象的实例。进一步划分的目的是为了更好地回收内存，或者更快地分配内存。如果在堆中没有内存完成实例分配，并且堆也无法再扩展时，将会抛出 OutOfMemoryError 异常。</p>
+<h3 id="方法区"><a href="#方法区" class="headerlink" title="方法区"></a>方法区</h3><p><strong>与 Java 堆一样，是各个线程共享的内存区域，它用于存储已被虚拟机加载的类信息、常量、静态变量、即时编译器编译后的代码等数据。虽然 Java 虚拟机规范把方法区描述为堆的一个逻辑部分，但是它却有一个别名叫做 Non-Heap（非堆），目的应该是与 Java 堆区分开来。</strong></p>
+<p>HotSpot 虚拟机上很多人愿意把方法区称为“永久代”（ Permanent Generation），本质上两者并不等价，仅仅是因为 HotSpot 虚拟机的设计团队选择把GC 分代收集扩展至方法区，或者说使用永久代来实现方法区而已。对于其他虚拟机（如 BEA JRockit、IBM J9 等）来说是不存在永久代的概念的。</p>
+<p>运行时常量池（Runtime Constant Pool）是方法区的一部分。Class 文件中除了有类的版</p>
+<p>本、字段、方法、接口等描述等信息外，还有一项信息是常量池</p>
+<p>（Constant Pool Table），用于存放编译期生成的各种字面量和符号引用，这部分内容将在类加</p>
+<p>载后存放到方法区的运行时常量池中。 Java 虚拟机对 Class 文件的每一部分（自然也包括常量</p>
+<p>池）的格式都有严格的规定，每一个字节用于存储哪种数据都必须符合规范上的要求，这样才会</p>
+<p>被虚拟机认可、装载和执行。</p>
+<h3 id="直接内存"><a href="#直接内存" class="headerlink" title="直接内存"></a>直接内存</h3><p>直接内存并不是虚拟机运行时数据区的一部分，也不是java虚拟机规范中定义的内存区域，但这部分内存也被频繁的使用，而且也会导致OutOfMemoryError异常。</p>
+<h1 id="GC"><a href="#GC" class="headerlink" title="GC"></a><strong>GC</strong></h1><p><strong>基本流程：</strong></p>
+<p>从Java GC的角度解读代码：程序20行new的Person对象会首先会进入年轻代的Eden中（如果对象太大可能直接进入年老代）。在GC之前对象是存在Eden和from中的，进行GC的时候Eden中的对象被拷贝到To这样一个survive空间（survive（幸存）空间：包括from和to，他们的空间大小是一样的，又叫s1和s2）中（有一个拷贝算法），From中的对象（算法会考虑经过GC幸存的次数）到一定次数（阈值（如果说每次GC之后这个对象依旧在Survive中存在，GC一次他的Age就会加1，默认15就会放到OldGeneration。但是实际情况比较复杂，有可能没有到阈值就从Survive区域直接到Old Generation区域。在进行GC的时候会对Survive中的对象进行判断，Survive空间中有一些对象Age是一样的，也就是经过的GC次数一样，年龄相同的这样一批对象的总和大于等于Survive空间一半的话，这组对象就会进入old Generation中，（是一种动态的调整））），会被复制到OldGeneration，如果没到次数From中的对象会被复制到To中，复制完成后To中保存的是有效的对象，Eden和From中剩下的都是无效的对象，这个时候就把Eden和From中所有的对象清空。在复制的时候Eden中的对象进入To中，To可能已经满了，这个时候Eden中的对象就会被直接复制到Old Generation中，From中的对象也会直接进入Old Generation中。就是存在这样一种情况，To比较小，第一次复制的时候空间就满了，直接进入old Generation中。复制完成后，To和From的名字会对调一下，因为Eden和From都是空的，对调后Eden和To都是空的，下次分配就会分配到Eden。一直循环这个流程。好处：使用对象最多和效率最高的就是在Young Generation中，通过From to就避免过于频繁的产生FullGC（Old Generation满了一般都会产生FullGC）</p>
+<p><strong>回收算法：</strong></p>
+<p><strong>引用计数算法：</strong></p>
+<p>正如算法名，这个算法就是给对象增加一个引用计数，每当对象被别的对象引用时，就将该对象的引用计数加一。所以当一个对象的引用计数为0的话，那么就说明这个对象没有被任何对象使用，那么JVM就可以认为这个对象是可以回收的对象啦。</p>
+<p>缺点也很明显，1.无法区分循环引用的对象（A引用了B，B引用了A），这2个对象的引用计数永远不可能为0，这2个对象无法被JVM回收。2.需要维护对象引用计数的值。</p>
+<p><strong>可达性算法：</strong></p>
+<p>这个算法就是通过 GC Roots 的对象作为起始点，然后通过这个节点往下找他引用的对象，直到最外层的叶子节点。当一个对象无法被 GC Roots 找到时，那么它就是可回收对象。</p>
+<p><strong>标记清除算法</strong></p>
+<p>这是最基础的垃圾回收算法，之所以说它是最基础的是因为它最容易实现，思想也是最简单的。标记-清除算法分为两个阶段：标记阶段和清除阶段。标记阶段的任务是标记出所有需要被回收的对象，清除阶段就是回收被标记的对象所占用的空间。</p>
+<p>该算法会产生大量的内存碎片，可能会导致当JVM要分配大对象内存时，不能找到可用的内存空间的问题。</p>
+<p><strong>复制</strong></p>
+<p>将内存划分为等大小的两块。每次只使用其中一块，当这一块内存满后将尚存活的对象复制到另一块上去，然后把满的那块内存清掉。</p>
+<p>不会产生内存碎片了，但是可利用的内存将变成原来内存的一半，而且需要付出复制内存对象带来的消耗。</p>
+<p><strong>标记压缩</strong></p>
+<p>结合了以上两个算法，为了避免缺陷而提出。先找出存活对象，然后把存活的对象移向内存的一端。然后清除端边界外的对象。</p>
+<h3 id="分代收集算法"><a href="#分代收集算法" class="headerlink" title="分代收集算法"></a>分代收集算法</h3><p>分代收集法是目前大部分JVM所采用的方法，其核心思想是根据对象存活的不同生命周期将内存划分为不同的域，一般情况下将GC堆划分为新生代，老生代，永久代（元数据区）。因为不同的区域，其存储对象的特点不同，因此可以根据不同区域选择不同的算法。新生代的特点是每次垃圾回收时都有大量垃圾需要被回收，回收频率很高，老生代的特点是每次垃圾回收时只有少量对象需要被回收，回收频率很低。</p>
+<h3 id="垃圾回收器："><a href="#垃圾回收器：" class="headerlink" title="垃圾回收器："></a>垃圾回收器：</h3><h4 id="年轻代垃圾回收器"><a href="#年轻代垃圾回收器" class="headerlink" title="年轻代垃圾回收器"></a>年轻代垃圾回收器</h4><p><strong>serial</strong></p>
+<p>单线程回收垃圾，它在进行垃圾收集时，必须暂停其他所有的工作线程，直到它收集完成。</p>
+<p>Serial收集器依然是虚拟机运行在Client模式下默认新生代收集器，对于运行在Client模式下的虚拟机来说是一个很好的选择。</p>
+<p><strong>parallel new</strong></p>
+<p>ParNew收集器其实就是Serial收集器的多线程版本，除了使用多线程进行垃圾收集之外，其余行为包括Serial收集器可用的所有控制参数、收集算法、Stop The Worl、对象分配规则、回收策略等都与Serial 收集器完全一样。</p>
+<p>ParNew收集器是许多运行在Server模式下的虚拟机中首选新生代收集器，其中有一个与性能无关但很重要的原因是，除Serial收集器之外，目前只有ParNew它能与CMS收集器配合工作。</p>
+<p><strong>Parallel Scavenge</strong></p>
+<p>Parallel Scavenge收集器是一个新生代收集器，它也是使用复制算法的收集器，是并行的多线程收集器</p>
+<p>该收集器的目标是达到一个可控制的吞吐量（Throughput）。所谓吞吐量就是CPU用于运行用户代码的时间与CPU总消耗时间的比值，即 吞吐量=运行用户代码时间/（运行用户代码时间+垃圾收集时间）</p>
+<p>停顿时间越短就越适合需要与用户交互的程序，良好的响应速度能提升用户体验，而高吞吐量则可用高效率地利用CPU时间，尽快完成程序的运算任务，主要适合在后台运算而不需要太多交互的任务。</p>
+<h4 id="老年代垃圾回收器"><a href="#老年代垃圾回收器" class="headerlink" title="老年代垃圾回收器"></a>老年代垃圾回收器</h4><p><strong>serial old</strong></p>
+<p>老年代的垃圾回收器，它是一个单线程收集器，使用标记整理算法。</p>
+<p>主要两大用途：</p>
+<p>（1）在JDK1.5以及之前的版本中与Parallel Scavenge收集器搭配使用</p>
+<p>（2）作为CMS收集器的后备预案，在并发收集发生Concurrent Mode Failure时使用</p>
+<p><strong>parallel old</strong></p>
+<p>Parallel Old 是Parallel Scavenge收集器的老年代版本，使用多线程和“标记-整理”算法。</p>
+<p><strong>CMS(Concurrent Mark Sweep)收集器</strong></p>
+<p>是一种以获取最短回收停顿时间为目标的收集器。目前很大一部分的Java应用集中在互联网站或者B/S系统的服务端上，这类应用尤其重视服务器的响应速度，希望系统停顿时间最短，以给用户带来较好的体验。CMS收集器就非常符合这类应用的需求</p>
+<p>CMS收集器是基于“标记-清除”算法实现的。它的运作过程相对前面几种收集器来说更复杂一些，整个过程分为4个步骤：</p>
+<p>1.初始标记</p>
+<p>2.并发标记</p>
+<p>3.重新标记</p>
+<p>4.并发清除</p>
+<p><strong>G1</strong></p>
+<p>JAVA8之后广泛使用，G1 将整个对区域划分为若干个Region，每个Region的大小是2的倍数（1M,2M,4M,8M,16M,32M，通过设置堆的大小和Region数量计算得出。</p>
+<p>Region区域划分与其他收集类似，不同的是单独将大对象分配到了单独的region中，会分配一组连续的Region区域（Humongous start 和 humonous Contoinue 组成），所以一共有四类Region（Eden，Survior，Humongous和Old），</p>
+<p>G1 作用于整个堆内存区域，设计的目的就是减少Full GC的产生。在Full GC过程中由于G1 是单线程进行，会产生较长时间的停顿。</p>
+<p>G1的OldGc标记过程可以和yongGc并行执行，但是OldGc一定在YongGc之后执行，即MixedGc在yongGC之后执行。</p>
+<h4 id="finalized"><a href="#finalized" class="headerlink" title="finalized"></a>finalized</h4><p><strong>finalize()的功能 :</strong></p>
+<p>一旦垃圾回收器准备释放对象所占的内存空间, 如果对象覆盖了finalize()并且函数体内不能是空的, 就会首先调用对象的finalize(), 然后在下一次垃圾回收动作发生的时候真正收回对象所占的空间.</p>
+<p>finalize()有一个特点就是: JVM始终只调用一次. 无论这个对象被垃圾回收器标记为什么状态, finalize()始终只调用一次. 但是程序员在代码中主动调用的不记录在这之内.</p>
+<p><strong>finalize()主要使用的方面:</strong></p>
+<p>java垃圾回收器只能回收创建在堆中的java对象, 而对于不是这种方式创建的对象则没有方法处理, 这就需要使用finalize()对这部分对象所占的资源进行释放. 使用到这一点的就是JNI本地对象, 通过JNI来调用本地方法创建的对象只能通过finalize()保证使用之后进行销毁,释放内存</p>
+<p>充当保证使用之后释放资源的最后一道屏障, 比如使用数据库连接之后未断开,并且由于程序员的个人原因忘记了释放连接, 这时就只能依靠finalize()函数来释放资源.</p>
+<p>尽量避免使用finalize():</p>
+<p>　finalize()不一定会被调用, 因为java的垃圾回收器的特性就决定了它不一定会被调用</p>
+<p>就算finalize()函数被调用, 它被调用的时间充满了不确定性, 因为程序中其他线程的优先级远远高于执行finalize（）函数线程的优先级。也许等到finalize()被调用, 数据库的连接池或者文件句柄早就耗尽了.</p>
+<p>如果一种未被捕获的异常在使用finalize方法时被抛出，这个异常不会被捕获，finalize方法的终结过程也会终止，造成对象出于破坏的状态。被破坏的对象又很可能导致部分资源无法被回收, 造成浪费.</p>
+<p>finalize()和垃圾回收器的运行本身就要耗费资源, 也许会导致程序的暂时停止.</p>
+<h3 id="强软弱虚引用"><a href="#强软弱虚引用" class="headerlink" title="强软弱虚引用"></a>强软弱虚引用</h3><h4 id="强引用"><a href="#强引用" class="headerlink" title="强引用"></a>强引用</h4><p>最普遍的一种引用方式，如String s = “123”，变量s就是字符串“123”的强引用，只要强引用存在，则垃圾回收器就不会回收这个对象。我们平时的引用基本都是强引用。（永不回收）</p>
+<h3 id="软引用（SoftReference）"><a href="#软引用（SoftReference）" class="headerlink" title="软引用（SoftReference）"></a>软引用（SoftReference）</h3><p>用于描述还有用但非必须的对象，如果内存不足，就回收。一般用于实现内存敏感的高速缓存，软引用可以和引用队列ReferenceQueue联合使用，如果软引用的对象被垃圾回收，JVM就会把这个软引用加入到与之关联的引用队列中。（不够才回收）</p>
+<h3 id="弱引用（WeakReference）"><a href="#弱引用（WeakReference）" class="headerlink" title="弱引用（WeakReference）"></a>弱引用（WeakReference）</h3><p>　在垃圾回收器线程扫描它所管辖的内存区域的过程中，一旦发现了只具有弱引用的对象，不管当前内存空间足够与否，都会回收它的内存。（遇到就回收）</p>
+<h3 id="虚引用（PhantomReference）"><a href="#虚引用（PhantomReference）" class="headerlink" title="虚引用（PhantomReference）"></a>虚引用（PhantomReference）</h3><p>是形同虚设，与其他几种引用都不同，虚引用并不会决定对象的生命周期。如果一个对象仅持有虚引用，那么它就和没有任何引用一样，在任何时候都可能被垃圾回收器回收。 虚引用主要用来跟踪对象被垃圾回收器回收的活动。（遇到就回收，必须与ReferenceQueue一起使用）</p>
+<p>　虚引用与软引用和弱引用的一个区别在于：虚引用必须和引用队列 （ReferenceQueue）联合使用。当垃圾回收器准备回收一个对象时，如果发现它还有虚引用，就会在回收对象的内存之前，把这个虚引用加入到与之关联的引用队列中。</p>
+<h2 id="并发、线程"><a href="#并发、线程" class="headerlink" title="并发、线程"></a>并发、线程</h2><p><strong>创建多线程方式</strong></p>
+<p><strong>方式一：继承Thread类的方式：</strong></p>
+<ul>
+<li>创建一个继承于Thread类的子类</li>
+<li>重写Thread类的run() –&gt; 将此线程执行的操作声明在run()中</li>
+<li>创建Thread类的子类的对象</li>
+<li>通过此对象调用start()：①启动当前线程 ② 调用当前线程的run()</li>
+</ul>
+<p><strong>方式二：实现Runnable接口的方式：</strong></p>
+<ul>
+<li><p>创建一个实现了Runnable接口的类</p>
+</li>
+<li><p>实现类去实现Runnable中的抽象方法：run()</p>
+</li>
+<li><p>创建实现类的对象</p>
+</li>
+<li><p>将此对象作为参数传递到Thread类的构造器中，创建Thread类的对象</p>
+</li>
+</ul>
+<ol>
+<li>通过Thread类的对象调用start()</li>
+</ol>
+<p><strong>方式三：Callable接口 jdk5.0新增</strong></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//1.创建一个实现Callable的实现类</span>
+<span class="token keyword">class</span> <span class="token class-name">NumThread</span> <span class="token keyword">implements</span> <span class="token class-name">Callable</span><span class="token punctuation">{</span>
+  <span class="token comment">//2.实现call方法，将此线程需要执行的操作声明在call()中</span>
+  <span class="token annotation punctuation">@Override</span>
+  <span class="token keyword">public</span> <span class="token class-name">Object</span> <span class="token function">call</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> sum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> <span class="token number">100</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span><span class="token punctuation">(</span>i <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        sum <span class="token operator">+=</span> i<span class="token punctuation">;</span>
+     <span class="token punctuation">}</span>
+   <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> sum<span class="token punctuation">;</span>
+ <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+​
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ThreadNew</span> <span class="token punctuation">{</span>
+  <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">//3.创建Callable接口实现类的对象</span>
+    <span class="token class-name">NumThread</span> numThread <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">NumThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//4.将此Callable接口实现类的对象作为传递到FutureTask构造器中，创建FutureTask的对象</span>
+    <span class="token class-name">FutureTask</span> futureTask <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FutureTask</span><span class="token punctuation">(</span>numThread<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//5.将FutureTask的对象作为参数传递到Thread类的构造器中，创建Thread对象，并调用start()</span>
+    <span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span>futureTask<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+​
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+      <span class="token comment">//6.获取Callable中call方法的返回值</span>
+      <span class="token comment">//get()返回值即为FutureTask构造器参数Callable实现类重写的call()的返回值。</span>
+      <span class="token class-name">Object</span> sum <span class="token operator">=</span> futureTask<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"总和为："</span> <span class="token operator">+</span> sum<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">InterruptedException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">ExecutionException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+ <span class="token punctuation">}</span>
+​
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>&nbsp;&nbsp;<strong>说明：</strong></p>
+<ul>
+<li>如何理解实现Callable接口的方式创建多线程比实现Runnable接口创建多线程方式强大？</li>
+<li>call()可以返回值的。</li>
+<li>call()可以抛出异常，被外面的操作捕获，获取异常的信息</li>
+<li>Callable是支持泛型的</li>
+</ul>
+<p><strong>新增方式二：使用线程池</strong></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">NumberThread</span> <span class="token keyword">implements</span> <span class="token class-name">Runnable</span><span class="token punctuation">{</span>
+​
+<span class="token annotation punctuation">@Override</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>i <span class="token operator">&lt;=</span> <span class="token number">100</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+   <span class="token keyword">if</span><span class="token punctuation">(</span>i <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+     <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">": "</span> <span class="token operator">+</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+ <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+​
+<span class="token punctuation">}</span>
+​
+<span class="token keyword">class</span> <span class="token class-name">NumberThread1</span> <span class="token keyword">implements</span> <span class="token class-name">Runnable</span><span class="token punctuation">{</span>
+​
+<span class="token annotation punctuation">@Override</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>i <span class="token operator">&lt;=</span> <span class="token number">100</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+   <span class="token keyword">if</span><span class="token punctuation">(</span>i <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+     <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">": "</span> <span class="token operator">+</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+ <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+​
+<span class="token punctuation">}</span>
+​
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ThreadPool</span> <span class="token punctuation">{</span>
+​
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ <span class="token comment">//1. 提供指定线程数量的线程池</span>
+ <span class="token class-name">ExecutorService</span> service <span class="token operator">=</span> <span class="token class-name">Executors</span><span class="token punctuation">.</span><span class="token function">newFixedThreadPool</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token class-name">ThreadPoolExecutor</span> service1 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">ThreadPoolExecutor</span><span class="token punctuation">)</span> service<span class="token punctuation">;</span>
+ <span class="token comment">//设置线程池的属性</span>
+​
+<span class="token comment">//   System.out.println(service.getClass());</span>
+<span class="token comment">//   service1.setCorePoolSize(15);</span>
+<span class="token comment">//   service1.setKeepAliveTime();</span>
+​
+• <span class="token comment">//2.执行指定的线程的操作。需要提供实现Runnable接口或Callable接口实现类的对象</span>
+• service<span class="token punctuation">.</span><span class="token function">execute</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">NumberThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//适合适用于Runnable</span>
+• service<span class="token punctuation">.</span><span class="token function">execute</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">NumberThread1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//适合适用于Runnable</span>
+​
+<span class="token comment">//   service.submit(Callable callable);//适合使用于Callable</span>
+   <span class="token comment">//3.关闭连接池</span>
+   service<span class="token punctuation">.</span><span class="token function">shutdown</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span>
+​
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>说明：</strong></p>
+<ul>
+<li>好处：</li>
+<li>提高响应速度（减少了创建新线程的时间）</li>
+<li>降低资源消耗（重复利用线程池中线程，不需要每次都创建）</li>
+<li>便于线程管理</li>
+<li>corePoolSize：核心池的大小</li>
+<li>maximumPoolSize：最大线程数</li>
+<li>keepAliveTime：线程没任务时最多保持多长时间后会终止</li>
+</ul>
+<h3 id="线程通信"><a href="#线程通信" class="headerlink" title="线程通信"></a>线程通信</h3><p><strong>1.线程通信涉及到的三个方法：</strong></p>
+<ul>
+<li>wait():一旦执行此方法，当前线程就进入阻塞状态，并释放同步监视器。</li>
+<li>notify():一旦执行此方法，就会唤醒被wait的一个线程。如果有多个线程被wait，就唤醒优先级高的那个。</li>
+<li>notifyAll():一旦执行此方法，就会唤醒所有被wait的线程。</li>
+</ul>
+<p><strong>2.说明：</strong></p>
+<ul>
+<li>wait()，notify()，notifyAll()三个方法必须使用在同步代码块或同步方法中。</li>
+<li>wait()，notify()，notifyAll()三个方法的调用者必须是同步代码块或同步方法中的同步监视器。</li>
+<li>否则，会出现IllegalMonitorStateException异常</li>
+<li>wait()，notify()，notifyAll()三个方法是定义在java.lang.Object类中。</li>
+</ul>
+<h3 id="wait-和-sleep-的区别"><a href="#wait-和-sleep-的区别" class="headerlink" title="wait() 和 sleep() 的区别"></a>wait() 和 sleep() 的区别</h3><h3 id="同："><a href="#同：" class="headerlink" title="同："></a>同：</h3><ul>
+<li>都是线程同步时会用到的方法，使当前线程暂停运行，把机会交给其他线程</li>
+<li>如果任何线程在等待期间被中断都会抛出InterruptedException</li>
+<li>都是native() 方法</li>
+</ul>
+<h3 id="异："><a href="#异：" class="headerlink" title="异："></a>异：</h3><ul>
+<li>wait() 是Object超类中的方法；而sleep()是线程Thread类中的方法</li>
+<li>对锁的持有不同，wait()会释放锁，而sleep()并不释放锁</li>
+<li>唤醒方法不完全相同，wait() 依靠notify或者notifyAll 、中断、达到指定时间来唤醒；而sleep()到达指定时间被唤醒.</li>
+<li>使用位置不同，wait只能在同步代码块或同步控制块中使用，而sleep可以在任何位置使用。</li>
+</ul>
+<h3 id="wait-与-await"><a href="#wait-与-await" class="headerlink" title="wait() 与 await()"></a>wait() 与 await()</h3><ul>
+<li>wait()是Object超类中的方法，而await()是ConditionObject类里面的方法.</li>
+<li>await会导致当前线程被阻塞，会释放锁，这点和wait是一样的</li>
+<li>await中的lock不再使用synchronized把代码同步包装起来</li>
+<li>await的阻塞需要另外的一个对象condition</li>
+<li>notify是用来唤醒使用wait的线程；而signal是用来唤醒await线程。</li>
+<li>所在的超类不同使用场景也不同，wait一般用于Synchronized中，而await只能用于ReentrantLock锁中</li>
+</ul>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">JunKun</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://example.com/2022/08/08/java-ji-chu-bi-ji/">http://example.com/2022/08/08/java-ji-chu-bi-ji/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">JunKun</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/java/">
+                                    <span class="chip bg-color">java</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2022/08/08/hexo-matery-zhu-ti-jiao-cheng/">
+                    <div class="card-image">
+                        
+                        <img src="https://cimg1.17lai.site/data/2022/03/2720220327072647.png" class="responsive-img" alt="三万字教程基于Hexo的matery主题搭建博客并深度优化一站式完全教程_">
+                        
+                        <span class="card-title">三万字教程基于Hexo的matery主题搭建博客并深度优化一站式完全教程_</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-08-08
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            夜法之书
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/docker/">
+                        <span class="chip bg-color">docker</span>
+                    </a>
+                    
+                    <a href="/tags/hexo/">
+                        <span class="chip bg-color">hexo</span>
+                    </a>
+                    
+                    <a href="/tags/matery/">
+                        <span class="chip bg-color">matery</span>
+                    </a>
+                    
+                    <a href="/tags/npm/">
+                        <span class="chip bg-color">npm</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/08/08/hao-yong-de-idea-kuai-jie-jian-da-quan/">
+                    <div class="card-image">
+                        
+                        <img src="https://img-blog.csdnimg.cn/20200826115753154.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L01vYXN0QWxs,size_16,color_FFFFFF,t_70#pic_center" class="responsive-img" alt="好用的IDEA 快捷键大全">
+                        
+                        <span class="card-title">好用的IDEA 快捷键大全</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-08
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            小文
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/IDEA/">
+                        <span class="chip bg-color">IDEA</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: Kailの博客<br />'
+            + '文章作者: JunKun<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="2869677115"
+                   fixed='true'
+                   autoplay='true'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='metadata'
+                   volume='0.1'
+                   list-folded='false'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022</span>
+            
+            <a href="/about" target="_blank">JunKun</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">38.3k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2022";
+                        var startMonth = "8";
+                        var startDate = "7";
+                        var startHour = "18";
+                        var startMinute = "0";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '本站已运行 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '本站已运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    calcSiteTime();
+                </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/liaojunkun" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1668235323@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1668235323" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1668235323" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+        
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/sakura.js"><\/script>');
+            }
+        </script>
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="/libs/background/canvas-nest.js"></script>
+    
+
+    
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="/libs/background/ribbon.min.js" async="async"></script>
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

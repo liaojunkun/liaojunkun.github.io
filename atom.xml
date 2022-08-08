@@ -1,74 +1,188 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>JunKun</title>
+  <title>Kailの博客</title>
   
   <subtitle>Kailの博客</subtitle>
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-08-08T05:40:20.181Z</updated>
+  <updated>2022-08-08T16:13:08.655Z</updated>
   <id>http://example.com/</id>
   
   <author>
-    <name>liao</name>
+    <name>JunKun</name>
     
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>weimingming</title>
-    <link href="http://example.com/2022/08/08/weimingming/"/>
-    <id>http://example.com/2022/08/08/weimingming/</id>
-    <published>2022-08-08T05:38:21.000Z</published>
-    <updated>2022-08-08T05:40:20.181Z</updated>
+    <title>记Java三级项目――五子棋</title>
+    <link href="http://example.com/2022/08/09/ji-java-san-ji-xiang-mu-wu-zi-qi/"/>
+    <id>http://example.com/2022/08/09/ji-java-san-ji-xiang-mu-wu-zi-qi/</id>
+    <published>2022-08-08T16:08:45.000Z</published>
+    <updated>2022-08-08T16:13:08.655Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code</summary>
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;这学期 Java 的三级项目，本是在老师给的“学生成绩管理系统”部分代码的基础上，实现图形化界面。着实无趣，但既然说可以做自己想做的，便想着做一个能网络对战的五子棋，最终时间仓促（忙着搞xx脚本）只能完成个单机的（Play Gobang with</summary>
         
       
     
     
     
+    
+    <category term="java" scheme="http://example.com/tags/java/"/>
     
   </entry>
   
   <entry>
-    <title>练习笔记</title>
-    <link href="http://example.com/2022/08/08/lian-xi-bi-ji/"/>
-    <id>http://example.com/2022/08/08/lian-xi-bi-ji/</id>
-    <published>2022-08-08T05:36:39.000Z</published>
-    <updated>2022-08-08T05:37:13.331Z</updated>
+    <title>常用Linux Bash命令教程</title>
+    <link href="http://example.com/2022/08/08/chang-yong-linux-bash-ming-ling-jiao-cheng/"/>
+    <id>http://example.com/2022/08/08/chang-yong-linux-bash-ming-ling-jiao-cheng/</id>
+    <published>2022-08-08T15:57:02.000Z</published>
+    <updated>2022-08-08T16:05:30.680Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://projecteuler.net/problem=1&quot;&gt;Problem 1&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img</summary>
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;常用linux命令介绍。入门Linux必学的命令行，熟练掌握后，效率远超Windows GUI操作。重要的是，可以方便的做自动化处理！&lt;/p&gt;
+&lt;p&gt;更多命令在线查询&amp;nbsp;&lt;a</summary>
         
       
     
     
     
+    
+    <category term="linux" scheme="http://example.com/tags/linux/"/>
+    
+    <category term="bash" scheme="http://example.com/tags/bash/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>三万字教程基于Hexo的matery主题搭建博客并深度优化一站式完全教程_</title>
+    <link href="http://example.com/2022/08/08/hexo-matery-zhu-ti-jiao-cheng/"/>
+    <id>http://example.com/2022/08/08/hexo-matery-zhu-ti-jiao-cheng/</id>
+    <published>2022-08-08T15:32:12.000Z</published>
+    <updated>2022-08-08T15:49:11.936Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;All in one</summary>
+        
+      
+    
+    
+    
+    
+    <category term="docker" scheme="http://example.com/tags/docker/"/>
+    
+    <category term="hexo" scheme="http://example.com/tags/hexo/"/>
+    
+    <category term="matery" scheme="http://example.com/tags/matery/"/>
+    
+    <category term="npm" scheme="http://example.com/tags/npm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>java基础笔记</title>
+    <link href="http://example.com/2022/08/08/java-ji-chu-bi-ji/"/>
+    <id>http://example.com/2022/08/08/java-ji-chu-bi-ji/</id>
+    <published>2022-08-08T14:24:34.819Z</published>
+    <updated>2022-08-08T15:25:38.864Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;一、java基础入门&quot;&gt;&lt;a href=&quot;#一、java基础入门&quot; class=&quot;headerlink&quot; title=&quot;一、java基础入门&quot;&gt;&lt;/a&gt;一、java基础入门&lt;/h1&gt;&lt;h1 id=&quot;1、JDK与JRE的区别&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="java" scheme="http://example.com/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>好用的IDEA 快捷键大全</title>
+    <link href="http://example.com/2022/08/08/hao-yong-de-idea-kuai-jie-jian-da-quan/"/>
+    <id>http://example.com/2022/08/08/hao-yong-de-idea-kuai-jie-jian-da-quan/</id>
+    <published>2022-08-08T14:09:23.000Z</published>
+    <updated>2022-08-08T14:19:40.847Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;【个人提取】&lt;/p&gt;
+&lt;p&gt;【Ctrl + X&amp;nbsp;删除行&lt;/p&gt;
+&lt;p&gt;【Ctrl + Z&amp;nbsp;撤销快捷键&lt;/p&gt;
+&lt;p&gt;【Ctrl + shift + Z&amp;nbsp;取消本次撤销&lt;/p&gt;
+&lt;p&gt;【Ctrl + D 复制行&lt;/p&gt;
+&lt;p&gt;【Ctrl +</summary>
+        
+      
+    
+    
+    
+    
+    <category term="IDEA" scheme="http://example.com/tags/IDEA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SpringBoot三大开发工具，你都用过么？</title>
+    <link href="http://example.com/2022/08/08/springboot-san-da-kai-fa-gong-ju-ni-du-yong-guo-me/"/>
+    <id>http://example.com/2022/08/08/springboot-san-da-kai-fa-gong-ju-ni-du-yong-guo-me/</id>
+    <published>2022-08-08T13:57:08.000Z</published>
+    <updated>2022-08-08T14:06:27.928Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;一、SpringBoot-Dedevtools&quot;&gt;&lt;a href=&quot;#一、SpringBoot-Dedevtools&quot; class=&quot;headerlink&quot; title=&quot;一、SpringBoot Dedevtools&quot;&gt;&lt;/a&gt;一、SpringBoot</summary>
+        
+      
+    
+    
+    
+    
+    <category term="SpringBoot" scheme="http://example.com/tags/SpringBoot/"/>
     
   </entry>
   
   <entry>
     <title>liaojunkun的第一个博客</title>
-    <link href="http://example.com/2022/08/08/liaojunkun-de-di-yi-ge-bo-ke/"/>
-    <id>http://example.com/2022/08/08/liaojunkun-de-di-yi-ge-bo-ke/</id>
+    <link href="http://example.com/2022/08/08/wo-de-de-di-yi-ge-bo-ke/"/>
+    <id>http://example.com/2022/08/08/wo-de-de-di-yi-ge-bo-ke/</id>
     <published>2022-08-08T05:30:10.000Z</published>
-    <updated>2022-08-08T05:30:10.703Z</updated>
+    <updated>2022-08-08T15:52:26.378Z</updated>
     
     
     
     
+    
+    <category term="java" scheme="http://example.com/tags/java/"/>
     
   </entry>
   
