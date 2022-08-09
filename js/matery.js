@@ -106,10 +106,6 @@ $(function () {
             subHtmlSelectorRelative: true
         });
 
-        $(document).find('img[data-original]').each(function(){
-            $(this).parent().attr("href", $(this).attr("data-original"));
-    });
-
         // progress bar init
         const progressElement = window.document.querySelector('.progress-bar');
         if (progressElement) {
