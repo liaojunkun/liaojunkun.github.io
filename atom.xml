@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-08-08T16:13:08.655Z</updated>
+  <updated>2022-08-09T02:45:36.120Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Road To coding 阅读</title>
+    <link href="http://example.com/2022/08/09/road-to-coding-yue-du/"/>
+    <id>http://example.com/2022/08/09/road-to-coding-yue-du/</id>
+    <published>2022-08-09T02:39:16.000Z</published>
+    <updated>2022-08-09T02:45:36.120Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="学习" scheme="http://example.com/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>记Java三级项目――五子棋</title>
@@ -28,8 +51,7 @@
       
         
         
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;这学期 Java 的三级项目，本是在老师给的“学生成绩管理系统”部分代码的基础上，实现图形化界面。着实无趣，但既然说可以做自己想做的，便想着做一个能网络对战的五子棋，最终时间仓促（忙着搞xx脚本）只能完成个单机的（Play Gobang with</summary>
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
         
       
     
@@ -52,9 +74,7 @@
       
         
         
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;常用linux命令介绍。入门Linux必学的命令行，熟练掌握后，效率远超Windows GUI操作。重要的是，可以方便的做自动化处理！&lt;/p&gt;
-&lt;p&gt;更多命令在线查询&amp;nbsp;&lt;a</summary>
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
         
       
     
@@ -79,8 +99,7 @@
       
         
         
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;All in one</summary>
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
         
       
     
@@ -109,7 +128,7 @@
       
         
         
-    <summary type="html">&lt;h1 id=&quot;一、java基础入门&quot;&gt;&lt;a href=&quot;#一、java基础入门&quot; class=&quot;headerlink&quot; title=&quot;一、java基础入门&quot;&gt;&lt;/a&gt;一、java基础入门&lt;/h1&gt;&lt;h1 id=&quot;1、JDK与JRE的区别&quot;&gt;&lt;a</summary>
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
         
       
     
@@ -132,12 +151,7 @@
       
         
         
-    <summary type="html">&lt;p&gt;【个人提取】&lt;/p&gt;
-&lt;p&gt;【Ctrl + X&amp;nbsp;删除行&lt;/p&gt;
-&lt;p&gt;【Ctrl + Z&amp;nbsp;撤销快捷键&lt;/p&gt;
-&lt;p&gt;【Ctrl + shift + Z&amp;nbsp;取消本次撤销&lt;/p&gt;
-&lt;p&gt;【Ctrl + D 复制行&lt;/p&gt;
-&lt;p&gt;【Ctrl +</summary>
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
         
       
     
@@ -160,7 +174,7 @@
       
         
         
-    <summary type="html">&lt;h2 id=&quot;一、SpringBoot-Dedevtools&quot;&gt;&lt;a href=&quot;#一、SpringBoot-Dedevtools&quot; class=&quot;headerlink&quot; title=&quot;一、SpringBoot Dedevtools&quot;&gt;&lt;/a&gt;一、SpringBoot</summary>
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
         
       
     
@@ -179,10 +193,41 @@
     <updated>2022-08-08T15:52:26.378Z</updated>
     
     
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
     
     
     
     <category term="java" scheme="http://example.com/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>程序员缺乏经验的7种表现</title>
+    <link href="http://example.com/2022/08/07/cheng-xu-yuan-que-fa-jing-yan-de-7-chong-biao-xian/"/>
+    <id>http://example.com/2022/08/07/cheng-xu-yuan-que-fa-jing-yan-de-7-chong-biao-xian/</id>
+    <published>2022-08-07T01:25:00.000Z</published>
+    <updated>2022-08-09T02:37:33.834Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="编程经验" scheme="http://example.com/tags/%E7%BC%96%E7%A8%8B%E7%BB%8F%E9%AA%8C/"/>
     
   </entry>
   

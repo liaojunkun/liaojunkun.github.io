@@ -64,7 +64,7 @@ $(function () {
 
     AOS.init({
         easing: 'ease-in-out-sine',
-        duration: 700,
+        duration: 300,
         delay: 100
     });
 
@@ -105,6 +105,10 @@ $(function () {
             // 启用字幕
             subHtmlSelectorRelative: true
         });
+
+        $(document).find('img[data-original]').each(function(){
+            $(this).parent().attr("href", $(this).attr("data-original"));
+    });
 
         // progress bar init
         const progressElement = window.document.querySelector('.progress-bar');
@@ -172,12 +176,20 @@ $(function () {
 });
 
 //黑夜模式提醒开启功能
+// setTimeout(function () {
+//     if ((new Date().getHours() >= 19 || new Date().getHours() < 7) && !$('body').hasClass('DarkMode')) {
+//         let toastHTML = '<span style="color:#97b8b2;border-radius: 10px;>' + '<i class="fa fa-bellaria-hidden="true"></i>晚上使用深色模式阅读更好哦。(ﾟ▽ﾟ)</span>'
+//         M.toast({ html: toastHTML })
+//     }
+// }, 2200);
+
 setTimeout(function () {
     if ((new Date().getHours() >= 19 || new Date().getHours() < 7) && !$('body').hasClass('DarkMode')) {
-        let toastHTML = '<span style="color:#97b8b2;border-radius: 10px;>' + '<i class="fa fa-bellaria-hidden="true"></i>晚上使用深色模式阅读更好哦。(ﾟ▽ﾟ)</span>'
+        let toastHTML = '<span style="color:#97b8b2;border-radius: 10px;>' + '<i class="fa fa-bellaria-hidden="true"></i>晚上使用黑夜模式阅读能够减轻视觉疲劳。</span>'
         M.toast({ html: toastHTML })
     }
-}, 2200);
+}, 2000)
+
 
 //黑夜模式判断
 if (localStorage.getItem('isDark') === '1') {

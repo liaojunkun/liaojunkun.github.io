@@ -5,7 +5,8 @@
 
 /* snote夜间模式 */
 .night .tip{
-    color: #4c4948;
+    color: #3a1b0600;
+    /*#4c4948*/
 }
 
 /* 背景颜色变灰色 */
@@ -64,7 +65,7 @@ body.DarkMode p,
 body.DarkMode pre,
 body.DarkMode .markmap-container svg g div,
 body.DarkMode .read .bg-cover .description {
-    color: rgba(255, 255, 255, 0.6); /*.85为透明度，可依据需求修改*/
+    color: rgba(255, 255, 255, 0.9); /*.85为透明度，可依据需求修改*/
 }
 body.DarkMode .fArticleTitle, body.DarkMode .fArticleAuthor, body.DarkMode .fArticleUpdate {
     color: rgba(255, 255, 255, 0.6) !important;
